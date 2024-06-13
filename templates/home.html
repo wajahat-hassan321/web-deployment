@@ -1,11 +1,347 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Junge:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee:wght@400&display=swap" />
+
+    <style>
+        a{
+            text-decoration: none;
+            color: #050505;
+        }
+        .desktop-2::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: rgba(108, 161, 239, 0.2);
+			z-index: -1;}
+        .desktop-2-child,
+        .image-1-icon {
+            position: absolute;
+            top: 29px;
+            height: 57px;
+            z-index: 2;
+        }
+
+        .desktop-2-child {
+            left: 7px;
+            background-color: var(--color-whitesmoke-100);
+            width: 1440px;
+        }
+
+        .image-1-icon {
+            left: 34px;
+            width: 55px;
+            object-fit: cover;
+        }
+
+        .group-child,
+        .group-item {
+            position: absolute;
+            left: 0;
+            width: 1440px;
+        }
+
+        .group-child {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+
+        .group-item {
+            top: 0;
+            background-color: var(--color-whitesmoke-100);
+            height: 57px;
+        }
+
+        .wajahat-hassan {
+            position: absolute;
+            top: 9px;
+            left: 82px;
+            font-size: 36px;
+            font-family: var(--font-fontovision);
+            display: inline-block;
+            width: 334px;
+            height: 19px;
+        }
+
+        .about-me,
+        .contact-me,
+        .skills {
+            position: absolute;
+            top: 15px;
+            left: 1082px;
+            display: inline-block;
+            width: 172px;
+            height: 26px;
+            font-size: larger;
+        }
+        .skills{
+            margin-left: 40px;
+        }
+        .about-me{
+            margin-left: 30px;
+           
+        }
+        .contact-me{
+            margin-left: 78px;
+
+        }
+
+        .contact-me,
+        .skills {
+            left: 1204px;
+            width: 63px;
+        }
+
+        .contact-me {
+            left: 1283px;
+            width: 149px;
+        }
+
+        .image-1-icon1 {
+            position: absolute;
+            top: 0;
+            left: 27px;
+            width: 55px;
+            height: 57px;
+            object-fit: cover;
+        }
+
+        .rectangle-parent {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            width: 100%px;
+            height: 995px;
+        
+        }
+
+        .wajahat-hassan-wrapper,
+        .wajahat-hassan1 {
+            position: absolute;
+            width: 1425px;
+            height: 118px;
+            cursor: pointer;
+        }
+
+        .wajahat-hassan1 {
+            top: 0;
+            left: 0;
+            font-size: 124px;
+            letter-spacing: -0.01em;
+            line-height: 118px;
+            display: inline-block;
+            mix-blend-mode: multiply;
+            font-family: "Fontovision IV";
+            letter-spacing: 0rem;
+            cursor: pointer;
+            
+        }
+
+        .wajahat-hassan-wrapper {
+            top: 261px;
+            left: 251px;
+            mix-blend-mode: hard-light;
+        }
+
+        .designer,
+        .designer-wrapper {
+            position: absolute;
+            width: 1357px;
+            height: 128px;
+            font-size: 64px;
+            font-family: "Fontovision IV";
+            margin-right: 100px;
+            cursor: pointer;
+                      
+        }
+
+        .designer {
+            top: 0;
+            left: 0;
+            display: inline-block;
+            mix-blend-mode: multiply;
+            margin-left: 0px;
+            cursor: pointer;
+            
+        }
+
+        .designer-wrapper {
+            top: 421px;
+            left: 779px;
+            mix-blend-mode: darken;
+            color: var(--color-whitesmoke-200);
+            margin-right: 100px;
+            
+        }
+
+        .blank-line {
+            margin-top: 7cm;
+            color: rgb(255, 255, 255);
+        }
+
+        .passionate-full-stack-container {
+            position: absolute;
+            top: 490px;
+            left: 62px;
+            font-size: 65px;
+            letter-spacing: 0.2rem;
+            line-height: 76px;
+            font-family: var(--font-bungee);
+            color: var(--color-white);
+            display: inline-block;
+            width: 1294px;
+            height: 124px;
+            mix-blend-mode: normal;
+            cursor: pointer;
+        }
+
+        .div {
+            position: absolute;
+            top: 444px;
+           
+            color: #050505;
+            display: inline-block;
+            width: 95px;
+            height: 62px;
+        }
+
+        .developer,
+        .developer-wrapper {
+            position: absolute;
+            width: 1585px;
+            height: 107px;
+            font-family: "Fontovision IV";
+            font-size: 64px;
+             margin-left: 160px;
+             cursor: pointer;
+        }
+
+        .developer {
+            top: 0;
+            left: 0;
+            display: inline-block;
+            mix-blend-mode: multiply;
+            cursor: pointer;
+        }
+
+        .developer-wrapper {
+            top: 421px;
+            left: 92px;
+            mix-blend-mode: normal;
+            color: var(--color-whitesmoke-200);
+        }
+
+
+        .desktop-2 {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-white);
+            overflow: hidden;
+            text-align: left;
+            font-size: var(--font-size-109xl);
+            color: var(--color-black);
+            /* Using the custom font family */
+        }
+
+        .fs {
+            font-family: "Fontovision IV";
+            font-size: 75px;
+            font-weight: 200;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+
+        .ss{
+            margin-top: 100px;
+            font-size: 64px;
+            font-family:"Fontovision IV" ;
+            z-index: 999;
+
+        }
+        a{
+            text-decoration: none;
+        }
+        
+
+
+
+        @font-face {
+            font-family: "Fontovision";
+            src: url("{% static 'font/Fontovision.ttf' %}");
+            /* Referencing Fontovision.ttf */
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: "Fontovision IV";
+            src: url("{% static 'fonts/Fontovision IV outline.ttf' %}");
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: "bungee";
+            src: url("{% static 'fonts/Bungee-Regular.ttf' %}");
+            font-weight: 400;
+        }
+     
+    </style>
 </head>
+
 <body>
-    <h1>wajahat hassan deployement</h1>
+    <div class="desktop-2">
+        <div class="desktop-2-child"></div>
+        <img class="image-1-icon" alt="" src="{% static 'images/icon1.png' %}" />
+
+        <div class="rectangle-parent">
+            <img class="group-child" alt="" src="{% static 'images/dave-hoefler-SpzGTdBg738-unsplash.jpg' %}" />
+
+            <div class="group-item"></div>
+            <div class="wajahat-hassan" style="font-family: Fontovision;">wajahat hassan</div>
+           <a href="{% url 'page' %}" style="text-decoration-color: #161616; text-decoration: none;" > <div class="about-me">about me</div> </a>
+            <div class="skills">skills</div>
+            <div class="contact-me">contact me</div>
+
+        </div>
+        <div class="wajahat-hassan-wrapper">
+            <div class="wajahat-hassan1">wajahat hassan </div>
+        </div>
+ 
+    
+        <div class="designer-wrapper">
+            <div class="designer">designer</div>
+         
+        </div >
+        
+        <div class="developer-wrapper">
+            <div class="developer">developer</div> 
+            <span class="ss" style="margin-left: 490px;">/</span>
+        </div>
+        
+        <div class="passionate-full-stack-container">
+
+            <p class="blank-line" style="font-family:bungee;">
+                Passionate <span class="fs">developer</span> & <span class="fs">designer</span> driven by creativity and
+                continuous learning.
+            </p>
+        </div>
+       
+    </div>
 </body>
+
 </html>
